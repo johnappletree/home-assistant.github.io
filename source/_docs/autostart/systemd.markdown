@@ -74,13 +74,22 @@ ExecStopPost=/usr/bin/docker rm -f home-assistant-%i
 WantedBy=multi-user.target
 ```
 
-You need to reload `systemd` to make the daemon aware of the new configuration. Enable and launch Home Assistant after that.
+You need to reload `systemd` to make the daemon aware of the new configuration. Enable and launch Home Assistant after that. For Ubuntu add the absolute path to the .service file inorder to be able and create the needed links. 
 
 ```bash
 $ sudo systemctl --system daemon-reload
 $ sudo systemctl enable home-assistant@[your user]
 $ sudo systemctl start home-assistant@[your user]
 ```
+
+Ubuntu
+
+```bash
+$ sudo systemctl --system daemon-reload
+$ sudo systemctl enable /lib/systemd/systemhome-assistant
+$ sudo systemctl start /lib/systemd/systemhome-assistant
+```
+
 
 If everything went well, `sudo systemctl start home-assistant@[your user]` should give you a positive feedback.
 
