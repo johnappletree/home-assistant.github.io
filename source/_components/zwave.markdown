@@ -23,3 +23,9 @@ If you have setup the requirements, then add the following entry `configuration.
 # Example configuration.yaml entry
 zwave:
 ```
+
+<p class='note warning'>
+You might need to install additional packages to get Z-Wave working. 
+Ubuntu: sudo apt-get install libudev-dev
+Fedora: yum install systemd-devel
+</p>
